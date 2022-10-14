@@ -35,6 +35,7 @@ export const getFilm = async (req, res) => {
 };
 
 export const createFilm = async (req, res) => {
+  /*
   try {
     const { name, salary } = req.body;
     const [rows] = await pool.query(
@@ -51,9 +52,11 @@ export const createFilm = async (req, res) => {
       message: "error",
     });
   }
+  */
 };
 
 export const deleteFilm = async (req, res) => {
+  /*
   try {
     const [result] = await pool.query("DELETE FROM marvel_vs_dc WHERE id = ?", [
       req.params.id,
@@ -70,9 +73,11 @@ export const deleteFilm = async (req, res) => {
       message: "error",
     });
   }
+  */
 };
 
 export const updateFilm = async (req, res) => {
+  /*
   const { id } = req.params;
   const { name, salary } = req.body;
   try {
@@ -99,4 +104,5 @@ export const updateFilm = async (req, res) => {
       message: "error",
     });
   }
+  */
 };
