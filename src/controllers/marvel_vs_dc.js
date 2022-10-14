@@ -10,7 +10,7 @@ export const getFilms = async (req, res) => {
     res.json(rows);
   } catch (error) {
     return res.status(500).json({
-      message: "error",
+      message: "error films",
     });
   }
 };
