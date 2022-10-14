@@ -11,7 +11,7 @@ app.use(indexRoutes);
 
 app.use('/api',employeesRoutes);
 
-app.use(marvelVsDcRoutes);
+app.use('/marvel-vs-dc', marvelVsDcRoutes);
 
 app.use((req, res, next) => {
     res.status(404).json({
