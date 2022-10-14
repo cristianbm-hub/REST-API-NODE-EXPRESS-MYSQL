@@ -6,7 +6,7 @@ export const getFilms = async (req, res) => {
   try {
     //throw new Error("my Error");
     console.log('recibido')
-    const [rows] = await pool.query("SELECT * FROM marvel_vd_dc");
+    const [rows] = await pool.query("SELECT * FROM marvel_vs_dc");
     res.json(rows);
   } catch (error) {
     return res.status(500).json({
@@ -18,7 +18,7 @@ export const getFilms = async (req, res) => {
 export const getFilm = async (req, res) => {
   try {
     console.log(req.params.id);
-    const [rows] = await pool.query("SELECT * FROM marvel_vd_dc WHERE id = ?", [
+    const [rows] = await pool.query("SELECT * FROM marvel_vs_dc WHERE id = ?", [
       req.params.id,
     ]);
     //Por si no existe el id de empleado en la base de datos
@@ -38,7 +38,7 @@ export const createFilm = async (req, res) => {
   try {
     const { name, salary } = req.body;
     const [rows] = await pool.query(
-      "INSERT INTO marvel_vd_dc (name, salary) VALUES (?, ?)",
+      "INSERT INTO marvel_vs_dc (name, salary) VALUES (?, ?)",
       [name, salary]
     );
     res.send({
@@ -55,7 +55,7 @@ export const createFilm = async (req, res) => {
 
 export const deleteFilm = async (req, res) => {
   try {
-    const [result] = await pool.query("DELETE FROM marvel_vd_dc WHERE id = ?", [
+    const [result] = await pool.query("DELETE FROM marvel_vs_dc WHERE id = ?", [
       req.params.id,
     ]);
 
@@ -78,7 +78,7 @@ export const updateFilm = async (req, res) => {
   try {
     //Para actualizar datos parcialmente se utiliza IFNULL
     const [result] = await pool.query(
-      "UPDATE marvel_vd_dc SET name = IFNULL(?, name), salary = IFNULL(?, salary) WHERE id = ?",
+      "UPDATE marvel_vs_dc SET name = IFNULL(?, name), salary = IFNULL(?, salary) WHERE id = ?",
       [name, salary, id]
     );
 
@@ -87,7 +87,7 @@ export const updateFilm = async (req, res) => {
         message: "employee not found",
       });
 
-    const [rows] = await pool.query("SELECT * FROM marvel_vd_dc WHERE id = ?", [
+    const [rows] = await pool.query("SELECT * FROM marvel_vs_dc WHERE id = ?", [
       id,
     ]);
 
