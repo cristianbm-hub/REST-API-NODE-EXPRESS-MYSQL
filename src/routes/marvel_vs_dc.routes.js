@@ -5,12 +5,12 @@ const router = Router();
 
 router.get("/films", getFilms );
 
-router.get("/employees/:id", getFilm );
+router.get("/films/:id", getFilm );
 
-router.post("/employees", createFilm );
+router.post("/films", createFilm );
 
-router.patch("/employees/:id", updateFilm );
+router.patch("/films/:id", updateFilm );
 
-router.delete("/employees/:id", deleteFilm );
+router.delete("/films/:id", deleteFilm );
 
 export default router;
